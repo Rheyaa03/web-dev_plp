@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Layout</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>JavaScript DOM Manipulation</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <h1>My Site</h1>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
 
-  <main class="content">
-    <section class="box">Content 1</section>
-    <section class="box">Content 2</section>
-    <section class="box">Content 3</section>
+  <header>
+    <h1 id="main-title">Welcome to JavaScript DOM Manipulation</h1>
+  </header>
+
+  <main>
+    <section>
+      <p id="intro-text">Click the button below to change this text and style!</p>
+      <button id="change-btn">Change Text & Style</button>
+    </section>
+
+    <section>
+      <button id="add-element-btn">Add New Paragraph</button>
+      <button id="remove-element-btn">Remove Paragraph</button>
+      <div id="container"></div>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 DOM Fun</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
