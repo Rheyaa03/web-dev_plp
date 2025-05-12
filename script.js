@@ -1,25 +1,26 @@
 
-document.getElementById('change-btn').addEventListener('click', function () {
-  const text = document.getElementById('intro-text');
-  text.textContent = 'Text and style have been changed with JavaScript!';
-  text.style.color = 'white';
-  text.style.backgroundColor = 'teal';
-  text.style.padding = '10px';
-  text.style.borderRadius = '8px';
-});
+const greeting = document.getElementById('greeting');
+const storedName = localStorage.getItem('username');
 
-
-document.getElementById('add-element-btn').addEventListener('click', function () {
-  const newPara = document.createElement('p');
-  newPara.textContent = 'This is a new paragraph added to the DOM!';
-  newPara.classList.add('dynamic-paragraph');
-  document.getElementById('container').appendChild(newPara);
-});
-
-
-document.getElementById('remove-element-btn').addEventListener('click', function () {
-  const container = document.getElementById('container');
-  if (container.lastChild) {
-    container.removeChild(container.lastChild);
+if (storedName) {
+  greeting.textContent = `Welcome back, ${storedName}!`;
+} else {
+  const name = prompt("What's your name?");
+  if (name) {
+    localStorage.setItem('username', name);
+    greeting.textContent = `Welcome, ${name}!`;
   }
+}
+
+
+const button = document.getElementById('animateBtn');
+
+button.addEventListener('click', () => {
+  
+  button.classList.add('animate');
+
+ 
+  setTimeout(() => {
+    button.classList.remove('animate');
+  }, 600);
 });
